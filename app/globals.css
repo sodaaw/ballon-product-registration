@@ -33,21 +33,27 @@
 
   /* 시니어 친화적 큰 입력 필드 */
   .input-field {
-    @apply w-full px-4 py-4 text-body-lg;
+    @apply w-full px-4 text-body-lg;
     @apply border-2 border-brand-gray-300 rounded-lg;
     @apply bg-white text-brand-dark;
     @apply placeholder:text-brand-gray-400;
     @apply focus:outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20;
     @apply transition-all duration-200;
     @apply min-h-[56px];
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   /* 큰 체크박스 */
   .checkbox-large {
-    @apply w-6 h-6 rounded border-2 border-brand-gray-400;
+    @apply rounded border-2 border-brand-gray-400;
     @apply cursor-pointer;
     @apply focus:ring-2 focus:ring-brand-primary/20;
     @apply accent-brand-primary;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
   }
 
   /* 큰 라디오 버튼 */

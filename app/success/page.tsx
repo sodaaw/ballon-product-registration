@@ -53,6 +53,9 @@ export default function SuccessPage() {
             <p className="text-body-lg text-brand-gray-600">
               특별한 혜택을 확인해보세요
             </p>
+            <p className="text-body-sm text-brand-gray-500 mt-4">
+              원하시면 아래에서 바로 인쇄하실 수 있습니다.
+            </p>
           </div>
 
           {/* 리워드 카드들 */}
@@ -133,43 +136,43 @@ export default function SuccessPage() {
                       가죽 제품을 오래 사용하기 위한 관리 팁
                     </p>
                     <div className="bg-brand-gray-50 rounded-lg p-4 space-y-3">
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-3" style={{ lineHeight: '1.8' }}>
                         <input
                           type="checkbox"
                           className="checkbox-large"
                           id="check1"
                         />
-                        <label htmlFor="check1" className="text-body text-brand-dark cursor-pointer">
+                        <label htmlFor="check1" className="text-body text-brand-dark cursor-pointer" style={{ lineHeight: '1.8' }}>
                           직사광선을 피해 보관하기
                         </label>
                       </div>
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-3" style={{ lineHeight: '1.8' }}>
                         <input
                           type="checkbox"
                           className="checkbox-large"
                           id="check2"
                         />
-                        <label htmlFor="check2" className="text-body text-brand-dark cursor-pointer">
+                        <label htmlFor="check2" className="text-body text-brand-dark cursor-pointer" style={{ lineHeight: '1.8' }}>
                           정기적으로 가죽 크림으로 관리하기
                         </label>
                       </div>
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-3" style={{ lineHeight: '1.8' }}>
                         <input
                           type="checkbox"
                           className="checkbox-large"
                           id="check3"
                         />
-                        <label htmlFor="check3" className="text-body text-brand-dark cursor-pointer">
+                        <label htmlFor="check3" className="text-body text-brand-dark cursor-pointer" style={{ lineHeight: '1.8' }}>
                           습기 많은 곳은 피하기
                         </label>
                       </div>
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-3" style={{ lineHeight: '1.8' }}>
                         <input
                           type="checkbox"
                           className="checkbox-large"
                           id="check4"
                         />
-                        <label htmlFor="check4" className="text-body text-brand-dark cursor-pointer">
+                        <label htmlFor="check4" className="text-body text-brand-dark cursor-pointer" style={{ lineHeight: '1.8' }}>
                           부드러운 천으로 먼지 제거하기
                         </label>
                       </div>
@@ -206,14 +209,14 @@ export default function SuccessPage() {
                       지금으로부터 100년 전, 발롱드파리 창립자 루이 가렐은 현악기 제작 장인의 가문에서 탄생한 바이올린 공방을 설립했다. 원통형의 독립 사운드 튜브를 이어 붙인 듯한 둥근 디자인이 특징인 이 스피커는 바이올린 선율을 느끼기 제격이다.
                     </p>
                     <div className="bg-gradient-to-br from-brand-primary/5 to-brand-gold/5 rounded-lg p-6 space-y-4">
-                      <div className="space-y-2">
+                      <div className="space-y-2" style={{ lineHeight: '1.8' }}>
                         <div className="text-body-lg font-medium text-brand-dark">
                           PLAY WITH BOMSORI KIM
                         </div>
                         <div className="text-body text-brand-gray-600">
                           Tchaikovsky: The Nutcracker
                         </div>
-                        <p className="text-body-sm text-brand-gray-500 mt-2 leading-relaxed">
+                        <p className="text-body-sm text-brand-gray-500 mt-2" style={{ lineHeight: '1.8' }}>
                           바이올리니스트 김봄소리가 연주한 차이콥스키 &lt;호두까기 인형&gt; 바이올린 협주곡을 감상해보길. 바이올린이 이렇게나 다채로운 음을 지녔다는 걸 느낄 수 있게 된다.
                         </p>
                       </div>

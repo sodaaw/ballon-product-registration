@@ -9,7 +9,9 @@ interface FormData {
   serialNumber: string;
   customerName: string;
   phoneNumber: string;
-  purchaseDate: string;
+  purchaseYear: string;
+  purchaseMonth: string;
+  purchaseDay: string;
   purchasePlace: string;
 }
 
@@ -17,7 +19,9 @@ interface FormErrors {
   serialNumber?: string;
   customerName?: string;
   phoneNumber?: string;
-  purchaseDate?: string;
+  purchaseYear?: string;
+  purchaseMonth?: string;
+  purchaseDay?: string;
   purchasePlace?: string;
 }
 
@@ -28,7 +32,9 @@ export default function RegisterPage() {
     serialNumber: '',
     customerName: '',
     phoneNumber: '',
-    purchaseDate: '',
+    purchaseYear: '',
+    purchaseMonth: '',
+    purchaseDay: '',
     purchasePlace: '',
   });
   const [errors, setErrors] = useState<FormErrors>({});
@@ -72,9 +78,7 @@ export default function RegisterPage() {
       }
     }
 
-    if (!formData.purchaseDate) {
-      newErrors.purchaseDate = '구매일을 선택해주세요';
-    }
+    // 구매일은 선택사항으로 변경 (시니어 친화적)
 
     if (!formData.purchasePlace.trim()) {
       newErrors.purchasePlace = '구매처를 입력해주세요';
@@ -99,7 +103,12 @@ export default function RegisterPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          purchaseDate: formData.purchaseYear && formData.purchaseMonth && formData.purchaseDay
+            ? `${formData.purchaseYear}-${formData.purchaseMonth.padStart(2, '0')}-${formData.purchaseDay.padStart(2, '0')}`
+            : '',
+        }),
       });
 
       if (response.ok) {
@@ -174,19 +183,68 @@ export default function RegisterPage() {
 
           {/* 구매일 */}
           <div className="w-full">
-            <label className="block text-body-lg font-medium text-brand-dark mb-2">
+            <label className="block text-body-lg font-bold text-brand-dark mb-4">
               구매일
             </label>
-            <input
-              type="date"
-              value={formData.purchaseDate}
-              onChange={(e) => handleChange('purchaseDate', e.target.value)}
-              className={`input-field ${errors.purchaseDate ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : ''}`}
-              required
-            />
-            {errors.purchaseDate && (
-              <p className="mt-2 text-body-sm text-red-600">{errors.purchaseDate}</p>
+            <div className="grid grid-cols-3 gap-3">
+              <div>
+                <select
+                  value={formData.purchaseYear}
+                  onChange={(e) => handleChange('purchaseYear', e.target.value)}
+                  className="input-field"
+                >
+                  <option value="">연도</option>
+                  {Array.from({ length: 5 }, (_, i) => {
+                    const year = new Date().getFullYear() - i;
+                    return (
+                      <option key={year} value={year}>
+                        {year}년
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+              <div>
+                <select
+                  value={formData.purchaseMonth}
+                  onChange={(e) => handleChange('purchaseMonth', e.target.value)}
+                  className="input-field"
+                >
+                  <option value="">월</option>
+                  {Array.from({ length: 12 }, (_, i) => {
+                    const month = (i + 1).toString();
+                    return (
+                      <option key={month} value={month}>
+                        {i + 1}월
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+              <div>
+                <select
+                  value={formData.purchaseDay}
+                  onChange={(e) => handleChange('purchaseDay', e.target.value)}
+                  className="input-field"
+                >
+                  <option value="">일</option>
+                  {Array.from({ length: 31 }, (_, i) => {
+                    const day = (i + 1).toString();
+                    return (
+                      <option key={day} value={day}>
+                        {i + 1}일
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+            </div>
+            {(errors.purchaseYear || errors.purchaseMonth || errors.purchaseDay) && (
+              <p className="mt-2 text-body-sm text-red-600">구매일을 선택해주세요</p>
             )}
+            <p className="mt-2 text-body-sm text-brand-gray-500">
+              직접 입력이 어려우시면 생략 가능합니다
+            </p>
           </div>
 
           {/* 구매처 */}
