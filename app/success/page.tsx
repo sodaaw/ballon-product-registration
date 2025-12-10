@@ -202,36 +202,36 @@ export default function SuccessPage() {
                     <h3 className="font-sans text-heading text-brand-dark mb-2 font-semibold">
                       추천 음악 플레이리스트
                     </h3>
-                    <p className="text-body text-brand-gray-600 mb-4">
-                      발롱드파리와 함께 즐기기 좋은 음악들
+                    <p className="text-body text-brand-gray-600 mb-4 leading-relaxed">
+                      지금으로부터 100년 전, 발롱드파리 창립자 루이 가렐은 현악기 제작 장인의 가문에서 탄생한 바이올린 공방을 설립했다. 원통형의 독립 사운드 튜브를 이어 붙인 듯한 둥근 디자인이 특징인 이 스피커는 바이올린 선율을 느끼기 제격이다.
                     </p>
                     <div className="bg-gradient-to-br from-brand-primary/5 to-brand-gold/5 rounded-lg p-6 space-y-4">
                       <div className="space-y-2">
                         <div className="text-body-lg font-medium text-brand-dark">
-                          클래식 모음
+                          PLAY WITH BOMSORI KIM
                         </div>
                         <div className="text-body text-brand-gray-600">
-                          Debussy, Chopin, Satie
+                          Tchaikovsky: The Nutcracker
                         </div>
+                        <p className="text-body-sm text-brand-gray-500 mt-2 leading-relaxed">
+                          바이올리니스트 김봄소리가 연주한 차이콥스키 &lt;호두까기 인형&gt; 바이올린 협주곡을 감상해보길. 바이올린이 이렇게나 다채로운 음을 지녔다는 걸 느낄 수 있게 된다.
+                        </p>
                       </div>
-                      <div className="h-px bg-brand-gray-200"></div>
-                      <div className="space-y-2">
-                        <div className="text-body-lg font-medium text-brand-dark">
-                          재즈 모음
-                        </div>
-                        <div className="text-body text-brand-gray-600">
-                          Bill Evans, Miles Davis, Chet Baker
-                        </div>
-                      </div>
-                      <div className="h-px bg-brand-gray-200"></div>
-                      <div className="space-y-2">
-                        <div className="text-body-lg font-medium text-brand-dark">
-                          보사노바 모음
-                        </div>
-                        <div className="text-body text-brand-gray-600">
-                          Astrud Gilberto, Stan Getz, João Gilberto
-                        </div>
-                      </div>
+                      <a
+                        href="https://youtu.be/yk-gfjafvM8?si=MqiFyT0cQKNCX8Wn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 w-full bg-brand-primary text-white font-medium text-body-lg px-6 py-3 rounded-lg min-h-[48px] transition-all duration-200 hover:bg-brand-primaryDark active:scale-[0.98] shadow-md"
+                      >
+                        <svg
+                          className="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                        YouTube에서 듣기
+                      </a>
                     </div>
                   </div>
                 </div>
