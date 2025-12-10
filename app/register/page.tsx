@@ -126,7 +126,7 @@ export default function RegisterPage() {
           >
             ← 뒤로
           </button>
-          <h1 className="font-serif text-title text-brand-dark">
+          <h1 className="font-sans text-title text-brand-dark font-semibold">
             제품 등록
           </h1>
           <p className="text-body text-brand-gray-600 mt-2">

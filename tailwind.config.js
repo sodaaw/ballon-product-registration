@@ -9,9 +9,9 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          primary: '#BB36EF',
-          primaryDark: '#9B2BCF',
-          primaryLight: '#D55AFF',
+          primary: '#BB362F',
+          primaryDark: '#9B2A1F',
+          primaryLight: '#D55A4F',
           gold: '#D4AF37',
           ivory: '#F5F5DC',
           dark: '#1A1A1A',
@@ -32,6 +32,7 @@ module.exports = {
       fontFamily: {
         serif: ['Playfair Display', 'serif'],
         sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+        logo: ['American Typewriter', 'Courier Prime', 'Courier New', 'monospace'],
       },
       fontSize: {
         'display': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.02em' }],

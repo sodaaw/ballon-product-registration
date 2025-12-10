@@ -11,7 +11,7 @@ export default function LandingPage() {
       {/* 헤더 */}
       <header className="w-full px-6 py-6">
         <div className="max-w-md mx-auto">
-          <h1 className="font-serif text-display text-brand-primary text-center mb-2">
+          <h1 className="font-logo text-display text-brand-primary text-center mb-2 font-medium tracking-tight">
             Ballon de Paris
           </h1>
           <div className="h-1 w-24 bg-brand-gold mx-auto rounded-full"></div>
@@ -23,7 +23,7 @@ export default function LandingPage() {
         <div className="max-w-md w-full text-center space-y-8">
           {/* 메인 타이틀 */}
           <div className="space-y-4">
-            <h2 className="font-serif text-title text-brand-dark leading-relaxed">
+            <h2 className="font-sans text-title text-brand-dark leading-relaxed font-semibold">
               발롱드파리와의 여정,
               <br />
               지금 시작하세요.

@@ -21,7 +21,7 @@ export default function SuccessPage() {
       {/* 헤더 */}
       <header className="w-full px-6 py-6">
         <div className="max-w-md mx-auto">
-          <h1 className="font-serif text-title text-brand-primary text-center">
+          <h1 className="font-logo text-title text-brand-primary text-center font-medium tracking-tight">
             Ballon de Paris
           </h1>
         </div>
@@ -47,7 +47,7 @@ export default function SuccessPage() {
                 />
               </svg>
             </div>
-            <h2 className="font-serif text-title text-brand-dark">
+            <h2 className="font-sans text-title text-brand-dark font-semibold">
               등록이 완료되었습니다!
             </h2>
             <p className="text-body-lg text-brand-gray-600">
@@ -77,7 +77,7 @@ export default function SuccessPage() {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-serif text-heading text-brand-dark mb-2">
+                    <h3 className="font-sans text-heading text-brand-dark mb-2 font-semibold">
                       DIY 가죽 도안
                     </h3>
                     <p className="text-body text-brand-gray-600 mb-4">
@@ -126,7 +126,7 @@ export default function SuccessPage() {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-serif text-heading text-brand-dark mb-2">
+                    <h3 className="font-sans text-heading text-brand-dark mb-2 font-semibold">
                       가죽 활용 체크리스트
                     </h3>
                     <p className="text-body text-brand-gray-600 mb-4">
@@ -199,7 +199,7 @@ export default function SuccessPage() {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-serif text-heading text-brand-dark mb-2">
+                    <h3 className="font-sans text-heading text-brand-dark mb-2 font-semibold">
                       추천 음악 플레이리스트
                     </h3>
                     <p className="text-body text-brand-gray-600 mb-4">
