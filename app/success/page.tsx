@@ -88,22 +88,32 @@ export default function SuccessPage() {
                     <p className="text-body text-brand-gray-600 mb-4">
                       발롱드파리만의 특별한 가죽 도안을 다운로드하세요
                     </p>
-                    <div className="flex gap-2">
+                    <div className="space-y-3">
+                      <div className="flex gap-2">
+                        <Button
+                          variant="secondary"
+                          size="md"
+                          onClick={() => handleDownload('pdf')}
+                          className="flex-1"
+                        >
+                          PDF 다운로드
+                        </Button>
+                        <Button
+                          variant="secondary"
+                          size="md"
+                          onClick={() => handleDownload('jpg')}
+                          className="flex-1"
+                        >
+                          JPG 다운로드
+                        </Button>
+                      </div>
                       <Button
-                        variant="secondary"
+                        variant="primary"
                         size="md"
-                        onClick={() => handleDownload('pdf')}
-                        className="flex-1"
+                        onClick={handlePrint}
+                        className="w-full"
                       >
-                        PDF 다운로드
-                      </Button>
-                      <Button
-                        variant="secondary"
-                        size="md"
-                        onClick={() => handleDownload('jpg')}
-                        className="flex-1"
-                      >
-                        JPG 다운로드
+                        도안 인쇄하기
                       </Button>
                     </div>
                   </div>
@@ -394,7 +404,7 @@ export default function SuccessPage() {
                       추천 음악 플레이리스트
                     </h3>
                     <p className="text-body text-brand-gray-600 mb-4 leading-relaxed">
-                      지금으로부터 100년 전, 발롱드파리 창립자 루이 가렐은 현악기 제작 장인의 가문에서 탄생한 바이올린 공방을 설립했다. 원통형의 독립 사운드 튜브를 이어 붙인 듯한 둥근 디자인이 특징인 이 스피커는 바이올린 선율을 느끼기 제격이다.
+                      지금으로부터 100년 전, 발롱드파리 창립자 루이 가렐은 현악기 제작 장인의 가문에서 탄생한 바이올린 공방을 설립했습니다. 원통형의 독립 사운드 튜브를 이어 붙인 듯한 둥근 디자인이 특징인 이 스피커는 바이올린 선율을 느끼기에 제격입니다.
                     </p>
                     <div className="bg-gradient-to-br from-brand-primary/5 to-brand-gold/5 rounded-lg p-6 space-y-4">
                       <div className="space-y-2" style={{ lineHeight: '1.8' }}>
@@ -405,10 +415,10 @@ export default function SuccessPage() {
                           Tchaikovsky: The Nutcracker
                         </div>
                         <p className="text-body-sm text-brand-gray-500 mt-2" style={{ lineHeight: '1.8' }}>
-                          바이올리니스트 김봄소리가 연주한 차이콥스키 &lt;호두까기 인형&gt; 바이올린 협주곡을 감상해보길. 바이올린이 이렇게나 다채로운 음을 지녔다는 걸 느낄 수 있게 된다.
+                          바이올리니스트 김봄소리가 연주한 차이콥스키 &lt;호두까기 인형&gt; 바이올린 협주곡을 감상해보시기 바랍니다. 바이올린이 이렇게나 다채로운 음을 지녔다는 것을 느끼실 수 있으실 것입니다.
                         </p>
                         <p className="text-body-sm text-brand-primary mt-3 font-medium" style={{ lineHeight: '1.8' }}>
-                          💡 위에서 다운로드한 가죽 도안으로 무언가를 만드는 동안 이 음악을 들으시면 더욱 즐거운 작업 시간이 될 것입니다.
+                          💡 위에서 다운로드하신 가죽 도안으로 무언가를 만드시는 동안 이 음악을 들으시면 더욱 즐거운 작업 시간이 되실 것입니다.
                         </p>
                       </div>
                       <a
@@ -434,15 +444,7 @@ export default function SuccessPage() {
           </div>
 
           {/* 액션 버튼들 */}
-          <div className="space-y-3 pt-4 pb-8">
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={handlePrint}
-              className="w-full"
-            >
-              페이지 인쇄하기
-            </Button>
+          <div className="pt-4 pb-8">
             <Button
               variant="secondary"
               size="lg"

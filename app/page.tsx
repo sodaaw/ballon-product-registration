@@ -29,9 +29,11 @@ export default function LandingPage() {
               지금 시작하세요.
             </h2>
             <p className="text-body-lg text-brand-gray-600 leading-relaxed">
-              간단한 등록으로
+              등록을 완료하면
               <br />
-              특별한 혜택을 받아보세요
+              당신만의 가죽 조각을 위한
+              <br />
+              맞춤 활용 가이드와 도안이 열립니다.
             </p>
           </div>
 

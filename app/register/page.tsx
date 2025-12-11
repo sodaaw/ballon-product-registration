@@ -164,7 +164,7 @@ export default function RegisterPage() {
             type="text"
             value={formData.customerName}
             onChange={(e) => handleChange('customerName', e.target.value)}
-            placeholder="성함을 입력하세요"
+            placeholder="성함을 입력해주세요"
             error={errors.customerName}
             required
           />
@@ -175,7 +175,7 @@ export default function RegisterPage() {
             type="tel"
             value={formData.phoneNumber}
             onChange={(e) => handleChange('phoneNumber', e.target.value)}
-            placeholder="010-0000-0000"
+            placeholder="010-0000-0000 형태로 입력해주세요"
             maxLength={13}
             error={errors.phoneNumber}
             required
@@ -242,9 +242,6 @@ export default function RegisterPage() {
             {(errors.purchaseYear || errors.purchaseMonth || errors.purchaseDay) && (
               <p className="mt-2 text-body-sm text-red-600">구매일을 선택해주세요</p>
             )}
-            <p className="mt-2 text-body-sm text-brand-gray-500">
-              직접 입력이 어려우시면 생략 가능합니다
-            </p>
           </div>
 
           {/* 구매처 */}
