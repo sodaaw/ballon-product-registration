@@ -96,7 +96,7 @@ export default function SuccessPage() {
                           onClick={() => handleDownload('pdf')}
                           className="flex-1"
                         >
-                          PDF 다운로드
+                          PDF<br />다운로드
                         </Button>
                         <Button
                           variant="secondary"
@@ -104,7 +104,7 @@ export default function SuccessPage() {
                           onClick={() => handleDownload('jpg')}
                           className="flex-1"
                         >
-                          JPG 다운로드
+                          이미지<br />다운로드
                         </Button>
                       </div>
                       <Button
@@ -145,50 +145,32 @@ export default function SuccessPage() {
                       가죽 활용 체크리스트
                     </h3>
                     <p className="text-body text-brand-gray-600 mb-4 leading-relaxed" style={{ lineHeight: '1.8' }}>
-                      발롱드파리의 스피커가 고유한 소리를 가진 것처럼, 여러분이 받은 가죽 조각도 세상에 하나뿐인 '유니크한 오브제'입니다. 등록을 완료하면, 당신의 조각이 어떤 가치를 가질 수 있는지 다양한 활용법을 안내해드려요. 하나씩 활용해보시면서 체크해가시면 더욱 즐거운 경험이 될 것입니다.
+                      발롱드파리의 스피커가 고유한 소리를 가진 것처럼, 여러분이 받은 가죽 조각도 세상에 하나뿐인 <span className="font-bold">'유니크한 오브제'</span>입니다. <span className="font-bold">이제 당신의 조각이 어떤 가치를 지닐 수 있는지 다양한 활용법을 확인해보세요.</span><br />
+                      하나씩 시도해보며 체크해가시면 더욱 즐거운 경험이 되실 것입니다.
                     </p>
                     
-                    {/* 더보기/접기 버튼 */}
-                    <button
-                      onClick={() => setIsChecklistExpanded(!isChecklistExpanded)}
-                      className="w-full bg-brand-primary text-white font-semibold text-body-lg px-6 py-4 rounded-lg min-h-[56px] flex items-center justify-center gap-2 transition-all duration-200 hover:bg-brand-primaryDark active:scale-[0.98] shadow-md mb-4"
-                    >
-                      {isChecklistExpanded ? (
-                        <>
-                          <svg
-                            className="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 15l7-7 7 7"
-                            />
-                          </svg>
-                          목록 접기
-                        </>
-                      ) : (
-                        <>
-                          <svg
-                            className="w-5 h-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M19 9l-7 7-7-7"
-                            />
-                          </svg>
-                          활용법 더보기
-                        </>
-                      )}
-                    </button>
+                    {/* 활용법 더보기 버튼 (목록이 접혀있을 때만 표시) */}
+                    {!isChecklistExpanded && (
+                      <button
+                        onClick={() => setIsChecklistExpanded(!isChecklistExpanded)}
+                        className="w-full bg-brand-primary text-white font-semibold text-body-lg px-6 py-4 rounded-lg min-h-[56px] flex items-center justify-center gap-2 transition-all duration-200 hover:bg-brand-primaryDark active:scale-[0.98] shadow-md mb-4"
+                      >
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                        활용법 더보기
+                      </button>
+                    )}
 
                     {/* 체크리스트 (조건부 렌더링) */}
                     {isChecklistExpanded && (
@@ -373,6 +355,27 @@ export default function SuccessPage() {
                           <span className="text-body-sm text-brand-gray-600">스피커 연결 가이드를 적어 끼워둘 수 있는 작은 카드 홀더로 사용하세요. 자투리 모양 그대로가 브랜드의 유니크함입니다.</span>
                         </label>
                       </div>
+                      
+                      {/* 목록 접기 버튼 (목록이 펼쳐져 있을 때만 표시) */}
+                      <button
+                        onClick={() => setIsChecklistExpanded(!isChecklistExpanded)}
+                        className="w-full bg-brand-primary text-white font-semibold text-body-lg px-6 py-4 rounded-lg min-h-[56px] flex items-center justify-center gap-2 transition-all duration-200 hover:bg-brand-primaryDark active:scale-[0.98] shadow-md mt-4"
+                      >
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 15l7-7 7 7"
+                          />
+                        </svg>
+                        목록 접기
+                      </button>
                     </div>
                     )}
                   </div>
@@ -408,13 +411,13 @@ export default function SuccessPage() {
                     </p>
                     <div className="bg-gradient-to-br from-brand-primary/5 to-brand-gold/5 rounded-lg p-6 space-y-4">
                       <div className="space-y-2" style={{ lineHeight: '1.8' }}>
-                        <div className="text-body-lg font-medium text-brand-dark">
+                        <div className="text-body-lg font-bold text-brand-dark">
                           PLAY WITH BOMSORI KIM
                         </div>
-                        <div className="text-body text-brand-gray-600">
+                        <div className="text-body font-bold text-brand-gray-600">
                           Tchaikovsky: The Nutcracker
                         </div>
-                        <p className="text-body-sm text-brand-gray-500 mt-2" style={{ lineHeight: '1.8' }}>
+                        <p className="text-body-sm text-brand-gray-500 mt-2 italic" style={{ lineHeight: '1.8' }}>
                           바이올리니스트 김봄소리가 연주한 차이콥스키 &lt;호두까기 인형&gt; 바이올린 협주곡을 감상해보시기 바랍니다. 바이올린이 이렇게나 다채로운 음을 지녔다는 것을 느끼실 수 있으실 것입니다.
                         </p>
                         <p className="text-body-sm text-brand-primary mt-3 font-medium" style={{ lineHeight: '1.8' }}>
