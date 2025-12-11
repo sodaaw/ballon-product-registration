@@ -404,7 +404,7 @@ export default function SuccessPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-sans text-heading text-brand-dark mb-2 font-semibold">
-                      추천 음악 플레이리스트
+                      추천 음악
                     </h3>
                     <p className="text-body text-brand-gray-600 mb-4 leading-relaxed">
                       지금으로부터 100년 전, 발롱드파리 창립자 루이 가렐은 현악기 제작 장인의 가문에서 탄생한 바이올린 공방을 설립했습니다. 원통형의 독립 사운드 튜브를 이어 붙인 듯한 둥근 디자인이 특징인 이 스피커는 바이올린 선율을 느끼기에 제격입니다.
