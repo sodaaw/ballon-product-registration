@@ -153,7 +153,7 @@ export default function RegisterPage() {
             type="text"
             value={formData.serialNumber}
             onChange={(e) => handleChange('serialNumber', e.target.value)}
-            placeholder="제품 뒷면의 시리얼 번호를 입력하세요"
+            placeholder="제품 뒷면의 시리얼 번호를 입력해주세요"
             error={errors.serialNumber}
             required
           />
@@ -250,7 +250,7 @@ export default function RegisterPage() {
             type="text"
             value={formData.purchasePlace}
             onChange={(e) => handleChange('purchasePlace', e.target.value)}
-            placeholder="구매하신 매장명을 입력하세요"
+            placeholder="구매하신 매장명을 입력해주세요"
             error={errors.purchasePlace}
             required
           />
