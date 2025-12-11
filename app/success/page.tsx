@@ -460,12 +460,6 @@ export default function SuccessPage() {
         </div>
       </main>
 
-      {/* 푸터 */}
-      <footer className="w-full px-6 py-6 border-t border-brand-gray-200">
-        <p className="text-body-sm text-brand-gray-400 text-center">
-          © 2024 Ballon de Paris. All rights reserved.
-        </p>
-      </footer>
     </div>
   );
 }
