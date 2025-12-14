@@ -9,13 +9,75 @@ export default function SuccessPage() {
   const router = useRouter();
   const [isChecklistExpanded, setIsChecklistExpanded] = useState(false);
 
-  const handleDownload = (type: 'pdf' | 'jpg') => {
-    // 실제로는 서버에서 파일을 다운로드하지만, 여기서는 시뮬레이션
-    alert(`${type === 'pdf' ? 'PDF' : 'JPG'} 파일 다운로드가 시작됩니다.`);
+  const handleDownload = async (type: 'pdf' | 'jpg') => {
+    try {
+      if (type === 'pdf') {
+        // PDF 다운로드
+        const response = await fetch('/api/download/pdf');
+        if (!response.ok) {
+          throw new Error('파일을 다운로드할 수 없습니다.');
+        }
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'leather.pdf';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+      } else {
+        // PNG 이미지 다운로드
+        const response = await fetch('/api/download/png');
+        if (!response.ok) {
+          throw new Error('파일을 다운로드할 수 없습니다.');
+        }
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'leather.png';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+      }
+    } catch (error) {
+      console.error('다운로드 오류:', error);
+      alert('파일 다운로드 중 오류가 발생했습니다.');
+    }
   };
 
-  const handlePrint = () => {
-    window.print();
+  const handlePrint = async () => {
+    try {
+      // PDF를 새 창에서 열어서 인쇄
+      const response = await fetch('/api/download/pdf');
+      if (!response.ok) {
+        throw new Error('파일을 불러올 수 없습니다.');
+      }
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const printWindow = window.open(url, '_blank');
+      
+      if (printWindow) {
+        printWindow.onload = () => {
+          // PDF가 로드되면 인쇄 대화상자 열기
+          setTimeout(() => {
+            printWindow.print();
+          }, 500);
+        };
+        // URL 정리는 창이 닫힐 때 처리
+        printWindow.addEventListener('beforeunload', () => {
+          window.URL.revokeObjectURL(url);
+        });
+      } else {
+        window.URL.revokeObjectURL(url);
+        alert('팝업이 차단되어 인쇄할 수 없습니다. 브라우저 설정에서 팝업을 허용해주세요.');
+      }
+    } catch (error) {
+      console.error('인쇄 오류:', error);
+      alert('인쇄 중 오류가 발생했습니다.');
+    }
   };
 
   return (
